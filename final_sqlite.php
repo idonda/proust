@@ -27,12 +27,12 @@ while ($resarr)
 		$empty_image[] = $resarr[1];
 		
 	if( !empty($_POST['popupempty']) AND $_POST['popupempty'] != "-1" AND $_POST['popupempty'] != $resarr[1] ){
-   	$rs->MoveNext();
+   	$resarr = $result->fetchArray();
    	continue;
    }
    
    if( isset($_POST['emptyimages']) AND file_exists( "img/".$resarr[1].".jpg" ) ){
-   	$rs->MoveNext();
+   	$resarr = $result->fetchArray();
    	continue;
    }
 		
